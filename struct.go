@@ -35,12 +35,18 @@ func structUsage() {
 	betty.contactInfo.zipCode = 99887
 	betty.contactInfo.email = "bettyperiera@email.com"
 
-	alex.updateFirstName("Randy")
+	// &alex means give the RAM memory address of 'alex'
+	// Turn value into address using &
+	alexPointer := &alex
+	alexPointer.updateFirstName("Alexa")
 	alex.print()
 }
 
-func (p *person) updateFirstName(newFirstName string) {
-	p.firstName = newFirstName
+// *person (person is type here) means we are working with pointers.
+// Turn address into value using *
+func (pointerToPerson *person) updateFirstName(newFirstName string) {
+	// *pointerToPerson (pointerToPerson is a variable here) means give me the value this memory address is pointing at
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func (p person) print() {
