@@ -37,8 +37,11 @@ func structUsage() {
 
 	// &alex means give the RAM memory address of 'alex'
 	// Turn value into address using &
-	alexPointer := &alex
-	alexPointer.updateFirstName("Alexa")
+	// alexPointer := &alex
+	// alexPointer.updateFirstName("Alexa")
+
+	// Simple way of writiing pointers
+	alex.updateFirstName("Alexa")
 	alex.print()
 }
 
